@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import yfinance as yf
 import scipy.optimize as so
+import matplotlib.pyplot as plt
 
 
 # Load the ticker symbols
@@ -10,7 +11,7 @@ nifty_500 = pd.read_csv('Data/ind_nifty500list.csv')
 tickers = [f"{symbol}.NS" for symbol in nifty_500['Symbol']]
 
 # Download or load historical data
-start_date = '2020-01-01'
+start_date = '2015-01-01'
 end_date = datetime.now().strftime('%Y-%m-%d')
 data_path = "Data/yf_data.pkl"
 
@@ -89,3 +90,13 @@ max_ret_risk_weights = max_ret_risk_weights[max_ret_risk_weights > 0]
 print("Amount to invest in each stock:")
 print(max_ret_risk_weights.sort_values(ascending=False))
 
+
+# === Plotting Portfolio Allocation ===
+plt.figure(figsize=(12, 6))
+max_ret_risk_weights.sort_values(ascending=False).plot(kind='bar')
+plt.title(f"Optimized Portfolio Allocation (Max Risk: {max_risk * 100:.1f}%)")
+plt.xlabel("Ticker")
+plt.ylabel("Weight (%)")
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.tight_layout()
+plt.show()
