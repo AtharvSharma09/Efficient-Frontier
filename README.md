@@ -85,3 +85,23 @@ No transaction costs or taxes are considered in the optimization.
 This project is licensed under the MIT License. See the LICENSE file for details.
 Contributing
 Contributions are welcome! Please open an issue or submit a pull request with improvements or bug fixes.
+
+
+## Contact
+
+For questions, suggestions, or issues, please:
+
+
+
+
+
+Open an issue on GitHub.
+
+
+
+Contact Atharv Sharma at atharvsharmatgu@gmail.com. 
+
+
+
+This project showcases Python skills, including object-oriented programming, randomization, and game logic. It was built as a fun and educational exercise to simulate a popular card game. Enjoy playing, and may the cards be in your favor!
+
